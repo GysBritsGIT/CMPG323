@@ -8,7 +8,7 @@ from taggit.managers import TaggableManager
 
 class Photo(models.Model):
     
-    title = models.CharField(max_length=45)
+    title = models.CharField(max_length=100)
 
     geolocation = models.CharField(max_length=100)
     
