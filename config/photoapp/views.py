@@ -51,7 +51,7 @@ class PhotoCreateView(LoginRequiredMixin, CreateView):
 
     model = Photo
     
-    fields = ['title', 'description', 'image', 'tags']
+    fields = ['title','geolocation', 'description', 'image', 'tags']
 
     template_name = 'photoapp/create.html'
     
@@ -82,7 +82,7 @@ class PhotoUpdateView(UserIsSubmitter, UpdateView):
 
     model = Photo
 
-    fields = ['title', 'description', 'tags']
+    fields = ['title','geolocation', 'description', 'tags']
     
     success_url = reverse_lazy('photo:list')
 

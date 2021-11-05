@@ -88,13 +88,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
 
-        'NAME': 'PhotoAlbum',                     
+        'NAME': 'photo',                     
 
         'USER': 'root',                     
 
-        'PASSWORD': 'Passw0rd',                  
+        'PASSWORD': 'blade8310',                  
 
-        'HOST': '34.123.191.162',                     
+        'HOST': 'localhost',                     
 
         
     }
