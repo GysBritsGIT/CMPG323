@@ -20,7 +20,13 @@ class Photo(models.Model):
 
     submitter = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
-    tags = TaggableManager() 
+    tags = TaggableManager()
 
-    def __str__(self):
+def __str__(self):
         return self.title
+
+
+@classmethod
+def filter_by_title(cls, title):
+    image_title = Photo.objects.filter(title__icontains = title)
+    return title

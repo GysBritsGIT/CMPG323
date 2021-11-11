@@ -14,11 +14,16 @@
     </button>
     <div
       class="collapse navbar-collapse flex-row-reverse"
-      id="navbarTogglerDemo02"
-    >
+      id="navbarTogglerDemo02">
       <ul class="navbar-nav">
         {% if user.is_authenticated %}
-
+        <form action="{% url 'photo:search_results' %}" method="get">
+        <input name="search" type="search" placeholder="Search" name="q"
+        class="form-control form-control-lg" />
+        <div class="input-group-append">
+        <button class="btn btn-dark btn-lg" href="{% url 'photo:search_results' %}">Search</button>
+        </div>
+        </form>
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'photo:create' %}">Add a photo</a>
         </li>

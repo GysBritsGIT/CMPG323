@@ -1,3 +1,4 @@
+from django.utils.translation import to_language
 from django.views.generic import CreateView
 
 from django.contrib.auth import authenticate, login
@@ -7,6 +8,10 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth.forms import UserCreationForm
 
 from django.urls import reverse_lazy
+from django.views.generic.list import ListView
+from django.db.models import Q
+
+from photoapp.models import Photo
 
 class SignUpView(CreateView):
 
@@ -31,3 +36,4 @@ class SignUpView(CreateView):
 class CustomLoginView(LoginView):
     
     template_name = 'users/login.html'
+

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'taggit',
     'crispy_forms',
+    'django_filters',
     
     # Custom apps
     'photoapp',
@@ -84,6 +86,37 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.mysql',
+#
+ #       'NAME': 'photodb',                     
+#
+ #       'USER': 'root',                     
+#
+ #       'PASSWORD': 'blade8310',                  
+#
+ #       'HOST': 'localhost',                     
+#
+ ##  }
+#}
+#
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#
+#        'NAME': 'photodb',                     
+#
+ #       'USER': 'root',                     
+#
+ #       'PASSWORD': 'blade8310',                  
+#
+ #       'HOST': 'localhost',                     
+#
+ #       
+  #  }
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -92,14 +125,13 @@ DATABASES = {
 
         'USER': 'root',                     
 
-        'PASSWORD': 'blade8310',                  
+        'PASSWORD': 'Passw0rd',                  
 
-        'HOST': 'localhost',                     
+        'HOST': '34.123.191.162',                     
 
         
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -153,5 +185,9 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']}
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
