@@ -10,6 +10,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.db.models import Q
+from django.shortcuts import render, redirect
 
 from photoapp.models import Photo
 
@@ -37,3 +38,9 @@ class CustomLoginView(LoginView):
     
     template_name = 'users/login.html'
 
+class LogoutView(ListView):
+    def get(self, request):
+     try:
+        del request.session['user']
+     except:
+        return redirect('list')

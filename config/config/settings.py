@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'taggit',
     'crispy_forms',
     'django_filters',
+    'taggit_templatetags2',
     
     # Custom apps
     'photoapp',

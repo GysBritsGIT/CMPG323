@@ -1,6 +1,6 @@
 '''Photoapp URL patterns'''
 
-from django.urls import path, include
+from django.urls import path, include, re_path, reverse_lazy
 
 from .views import (
     PhotoListView,
@@ -28,5 +28,7 @@ urlpatterns = [
     path('photo/<int:pk>/delete/', PhotoDeleteView.as_view(), name='delete'),
 
     path('search_results/', SearchResultsView.as_view(), name='search_results'),##
+
+    #url(r'^tags/', include('taggit_templatetags2.urls')),
 
 ]

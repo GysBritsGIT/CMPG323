@@ -24,7 +24,7 @@ from django.db.models import QuerySet
 
 from rest_framework import filters
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 class PhotoListView(ListView):
     
@@ -120,12 +120,12 @@ class SearchResultsView(PhotoListView):
     
     def SearchResultsView(request):
         if 'q' in request.GET and request.GET["q"]:
-            query = request.GET.get('q')
-            object_list = Photo.objects.filter(Q(tags__icontains = query))
+            query = request.GET.get('q', '')
+            object_list = Photo.objects.filter(Q(tags__name__in = query))
             #object_list = Photo.filter_by_title(Photo.title)
             message = f"{query}"
             print(object_list)
-            return render(request, 'search_results.html', {"message": message, "photo": object_list})
+            return render(request, 'search_results', {"message": message, "photo": object_list})
         else:
             message = "Please enter tag number"
-            return render(request, 'search_results.html', {"message": message})
+            return render(request, 'search_results', {"message": message})
