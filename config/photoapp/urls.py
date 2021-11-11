@@ -1,7 +1,6 @@
 '''Photoapp URL patterns'''
 
 from django.urls import path, include
-from django.conf.urls import url, urls
 
 from .views import (
     PhotoListView,
