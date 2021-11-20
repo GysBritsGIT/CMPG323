@@ -22,7 +22,8 @@
         <li><a href="{% url 'photo:tag' tag.slug %}" class="btn btn-sm list-group-item list-group-item-primary">{{tag.name}}</a></li>
       {% endfor %}
     </ul>
-    <p>{{ photo.description }}</p>
+    <h4>Description</h4><p>{{ photo.description }}</p>
+    <h4>Geolocation</h4><p>{{ photo.geolocation }}</p>
   </div>
 </div>
 
