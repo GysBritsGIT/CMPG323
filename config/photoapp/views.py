@@ -119,9 +119,9 @@ class SearchResultsView(PhotoListView):
     success_url = reverse_lazy('photo:search_result')
     
     def SearchResultsView(request):
-        if 'q' in request.GET and request.GET["q"]:
+        if 'q' in request.GET and request.GET['q']:
             query = request.GET.get('q', '')
-            object_list = Photo.objects.filter(Q(tags__name__in = query))
+            object_list = Photo.objects.filter(Q(tags__slug__icontains = query))
             #object_list = Photo.filter_by_title(Photo.title)
             message = f"{query}"
             print(object_list)

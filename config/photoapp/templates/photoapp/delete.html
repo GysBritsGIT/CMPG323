@@ -3,12 +3,10 @@
 {% block body %}
 <div class="form-group mx-auto">
   <h2 class="text-center">
-    You are going to <span class="text-danger">delete</span>: "<i
-      >{{ photo }}</i
-    >
-    "
+    Are you sure you want to <span class="text-danger">delete</span>: "<i
+      >{{ photo.title }}</i>"
   </h2>
-  <p class="text-center">Are you sure, you want to delete the photo ?</p>
+  <p class="text-center">Click Delete or Cancel to go back</p>
   <div class="form-group">
     <form
       action=""
@@ -26,7 +24,7 @@
           <button type="submit" class="btn btn-danger">Delete</button>
         </div>
       </div>
-      <p>This action is irreversible</p>
+      <p>This will permanently delete the photo</p>
     </form>
   </div>
 </div>

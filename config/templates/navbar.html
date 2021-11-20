@@ -5,11 +5,10 @@
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarTogglerDemo02"
+      data-bs-target="#navbarToggler"
       aria-controls="navbarTogglerDemo02"
       aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div
@@ -18,7 +17,7 @@
       <ul class="navbar-nav">
         {% if user.is_authenticated %}
         <form method="get" action="{% url 'photo:search_results' %}" >
-        <input name="search" type="search" placeholder="Search" name="q"
+        <input name="q" type="text" placeholder="Search"
         class="form-control form-control-lg" />
         <div class="input-group-append">
         <button class="btn btn-dark btn-lg" href="{% url 'photo:search_results' %}">Search</button>
