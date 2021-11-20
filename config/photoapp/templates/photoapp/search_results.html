@@ -3,7 +3,7 @@
 {% block body %}
 
 <div class="container">
-  {% if photos %}
+  {% if object_list %}
   <h2 class="text-center" id="found">Found {{ photos|length }} with tag number '{{message}}' number</h2>
   
     {% else %}
@@ -12,8 +12,8 @@
         <button class="btn btn-sm btn-info d-block mx-auto">Back Home</button>
     </a>
     {% endif %}
-   {% if photos %} 
-  {% for photo in photos %}
+   {% if object_list %} 
+  {% for photo in object_list %}
   <div class="col-lg-3 col-md-4 col-xs-6">
     <a href="{% url 'photo:detail' photo.id %}" class="d-block mb-4 h-100">
       <img src="{{photo.image.url}}" class="img-fluid rounded" alt="{{photo.title}}" />
